@@ -10,7 +10,7 @@
   right: -750px;
 }
 
-.sign-in-form input[type=text], input[type=password], textarea{
+.sign-in-form input[type=text], input[name=password], textarea{
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
@@ -28,20 +28,24 @@
 }
 
 input[name=commit]{
-  background-color: #B5FFFB;
+  position-left: 200px;
   border: 0;
-  border-bottom: 1px solid #B5FFFB;
-  border-right: 1px solid #B5FFFB;
+  margin: 0;
   text-shadow: 2px 2px #FFF;
   position: relative;
-  padding: 2px 4px;
+  padding: 4px 3px;
   font-size: 1em;
-  color: #000;
-  text-decoration: none;
-  font-style: italic;
   text-transform: uppercase;
   border-radius: 0;
   -webkit-appearance:none;
+  -webkit-transform:rotate(180deg);
+  transform:rotate(180deg);
+  /*-ms-transform: translate(2px,3px); /* IE 9
+  -webkit-transform: translate(2px,3px); /* Chrome, Safari, Opera */
+  transform: translate(2px,3px);*/
+  color: #B9BFBD;
+  text-decoration: none;
+  vertical-align: top;
 }
 
 input[name=commit]:hover{
@@ -52,19 +56,77 @@ input[name=commit]:hover{
   border-right: 1px solid #FFF;
   text-shadow: 2px 2px #FFF;
   position: relative;
-  padding: 2px 4px;
+  padding: 4px 3px;
   font-size: 1em;
-  color: #000;
-  text-decoration: none;
-  font-style: italic;
   text-transform: uppercase;
   border-radius: 0;
   -webkit-appearance:none;
-  /*-webkit-transform:rotate(180deg);
-    transform:rotate(180deg);*/
-    -ms-transform: translate(2px,3px); /* IE 9 */
-    -webkit-transform: translate(2px,3px); /* Chrome, Safari, Opera */
-    transform: translate(2px,3px);
+  -webkit-transform:rotate(180deg);
+  transform:rotate(180deg);
+  /*-ms-transform: translate(2px,3px); /* IE 9
+  -webkit-transform: translate(2px,3px); /* Chrome, Safari, Opera */
+  transform: translate(2px,3px);*/
+  color: #B9BFBD;
+  text-decoration: none;
+}
+
+#signup{
+  width: 30%;
+  margin: auto;
+  padding-top: 7%;
+}
+
+#signup h2{
+  font-size: 2em;
+}
+
+#signup input[type=text], input[name=signup_p], input[name=signup_confirm], textarea{
+  font-size: 1.2em;
+  width: 100%;
+  border-style: 0;
+  border-radius: 1;
+}
+
+#signup h3{
+  font-size: 1.2em;
+}
+
+#user_password{
+  font-size: 1.2em;
+  width: 100%;
+  border-style: 0;
+  border-radius: 1;
+}
+
+#user_password_confirmation{
+  font-size: 1.2em;
+  width: 100%;
+  border-style: 0;
+  border-radius: 1;
+}
+
+
+#title a{
+  color: #B9BFBD;
+  text-decoration: none;
+}
+
+#title a:hover{
+  color: #B5FFFB;
+  text-shadow: 0px 0px 10px white, 2px 2px 3px black;
+}
+
+.log-out-link a{
+  color: #B9BFBD;
+  text-decoration: none;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.log-out-link a:hover{
+  color: #B5FFFB;
+  text-shadow: 0px 0px 10px white, 2px 2px 3px black;
 }
 
 

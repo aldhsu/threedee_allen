@@ -15,15 +15,15 @@
         <iframe src="http://ghbtns.com/github-btn.html?user=mdo&repo=github-buttons&type=fork"
   allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
       </div>
-      <h3 id="title">Threedee'r</h3>
+
+      <h3 id="title"><a href="/">Threedee</a></h3>
+
       <%== smartnav %>
       <div class="sign-in-form">
-        <%== form_tag(sessions_path, :id => "sign-in-fuck", :method => :post, remote: true) do %>
-          <%= label :username, "USERNAME" %>
-          <%= text_field_tag :username %>
+        <%= form_tag(sessions_path, :id => "sign-in-fuck", :method => :post, remote: true) do %>
+          <%= text_field_tag :username, nil, :placeholder => "Username" %>
 
-          <%= label :password, "PASSWORD" %>
-          <%= password_field_tag :password %>
+          <%= password_field_tag :password, nil, :placeholder => "Password" %>
 
           <%= submit_tag "Sign In" %>
         <% end %>

@@ -23,11 +23,6 @@ $(document).ready(function() {
     // setUpSettings(data["settings"][0]["visualiser_id"],data["settings"][0]["settings"])
   })
 
-  $('#new_task').on('ajax:success', function (task) {
-    $('#new_task').get(0).reset();
-    add_marker(task.latitude, task.longitude, task.title)
-  });
-
   $("#inner-nav").on('click',"#logout", function() {
     $.ajax({
       url: '/sessions/' + user_id,
@@ -39,4 +34,5 @@ $(document).ready(function() {
       }
     });
   });
+
 });

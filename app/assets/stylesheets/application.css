@@ -70,8 +70,7 @@ body {
 }
 
 #sign-up-link,
-#sign-in-link,
-#sign-out-link {
+#sign-in-link {
   display: inline-block;
   margin-top: 10px;
   padding-right: 12.5px;

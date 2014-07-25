@@ -11,7 +11,7 @@ module ApplicationHelper
       links += "</div>"
     else
       links += "<div id='sign-in-link'><a href='#'>Sign In</a></div>"
-      links += "<div id='sign-up-link'><a href='#'>Sign Up</a></div>"
+      links += "<div id='sign-up-link'><a href='/signup'>Sign Up</a></div>"
     end
 
     links + '</div>'

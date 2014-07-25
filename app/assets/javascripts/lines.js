@@ -9,7 +9,7 @@ function lines(getTimeDomain, getFrequencies) {
     speedX: 0.1,
     speedY: 0.1,
     speedZ: 1,
-    backgroundColorController: 0xFFFFFF,
+    backgroundColorController: 0x000000,
     currentAnimationId: null
   }
   // Sets up the scene.
@@ -116,7 +116,7 @@ function lines(getTimeDomain, getFrequencies) {
       var freqPoint = verticesFactory((i-(freqArray.length)/2)*2, amplitude);
       freqPoints.push(freqPoint);
     };
-    lineFactory(freqData[0]-80, freqData[5], freqData[10]+90, freqPoints);
+    lineFactory(freqData[0], freqData[5], freqData[10], freqPoints);
 
     // if (average < 50){
     //   lineFactory(colors[0][0], colors[0][1], colors[0][2],freqPoints);
