@@ -8,11 +8,31 @@ $(document).ready(function () {
   };
 
   var getValues = function(id) {
+    var settingHash = {};
+    settingHash["visualiser"] = id;
+    settingHash["setting"] = {}
     _.each($(id + ' input'), function(ele) {
-      console.log($(ele).val())
+      console.log($(ele).context.type)
+      $ele = $(ele)
+      if ($ele.context.type != 'submit') {
+        settingHash["setting"][$ele.context.id] = $ele.val();
+      }
+    })
+
+    return {settings: settingHash};
+  }
+
+  var sendValues = function(data) {
+    $.ajax({
+      url: '/settings',
+      type: 'POST',
+      dataType: 'json',
+      data: data,
+      success: function(xhr, data) {
+        console.log(data);
+      }
     })
   }
-  var currentAnimationId;
 
   function stopPrevious () {
     try{
@@ -128,11 +148,13 @@ $(document).ready(function () {
     event.preventDefault();
     switch (event.target.id) {
       case "sunflare-save":
-        getValues('#sunflare')
+        sendValues(getValues('#sunflareControls'));
         break;
       case "lines-save":
+        getValues('#linesSpeedControls')
         break;
       case "cubegrid-save":
+        getValues('#cubeGridControls')
         break;
     }
   });

@@ -11,11 +11,10 @@ class SessionsController < ApplicationController
     user = User.find_by(:username => params[:username])
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      render json: user
     else
       redirect_to login_path
     end
-
+    render json: {user: user , settings: user.settings}.to_json
   end
 
   def destroy
