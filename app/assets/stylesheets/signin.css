@@ -40,9 +40,7 @@ input[name=commit]{
   -webkit-appearance:none;
   -webkit-transform:rotate(180deg);
   transform:rotate(180deg);
-  /*-ms-transform: translate(2px,3px); /* IE 9
-  -webkit-transform: translate(2px,3px); /* Chrome, Safari, Opera */
-  transform: translate(2px,3px);*/
+  transform: translate(2px,3px);
   color: #B9BFBD;
   text-decoration: none;
   vertical-align: top;
@@ -63,9 +61,7 @@ input[name=commit]:hover{
   -webkit-appearance:none;
   -webkit-transform:rotate(180deg);
   transform:rotate(180deg);
-  /*-ms-transform: translate(2px,3px); /* IE 9
-  -webkit-transform: translate(2px,3px); /* Chrome, Safari, Opera */
-  transform: translate(2px,3px);*/
+  transform: translate(2px,3px);
   color: #B9BFBD;
   text-decoration: none;
 }
