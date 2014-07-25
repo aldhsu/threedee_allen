@@ -14,12 +14,25 @@ class SessionsController < ApplicationController
     else
       redirect_to login_path
     end
-    render json: {user: user , settings: user.settings}.to_json
+    data = {
+      user: user.username,
+      settings: {}
+    }
+    # binding.pry
+    user.settings.each do |setting|
+      # dirty eval
+      # binding.pry
+      eval(setting.settings).keys.each do |key|
+        data[:settings][key] = setting.settings[key]
+      end
+    end
+    render text: JSON.generate(data)
+
   end
 
   def destroy
     session[:user_id] = nil
-    render json: @current_user
+    render nothing: true
   end
 
   private
