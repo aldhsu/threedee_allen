@@ -18,6 +18,12 @@ $(document).ready(function () {
           Sound.audio0.pause();
           Sound.audio0.src = result.stream_url + '?client_id=' + client_id;
           Sound.audio0.play();
+          $('footer').empty();
+          var p = $('<p>');
+          p.attr('id', 'upl_success');
+          p.text(result.title)
+          $('footer').append(p);
+          $('#soundcloud-url').toggle('fold');
         }
     });
     }

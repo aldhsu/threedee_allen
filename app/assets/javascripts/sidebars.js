@@ -62,7 +62,7 @@ $(document).ready(function() {
   visTab.init();
 
   //------------------ MENU JS --------------------//
-    // show and hide mp3 / soundcloud pop outs
+    // show and hide mp3 / soundcloud pop outs with jquery-ui
   $('#mp3-drop-menu').on('click', function () {
     if ($('#soundcloud-url').is(':visible')) {
       $('#soundcloud-url').hide();

@@ -32,6 +32,22 @@ body {
 #gh-btn {
   position: absolute;
   z-index: 10;
+  margin: 1px 10px 0 0;
+}
+
+#title {
+  position: fixed;
+  left: 65px;
+  top: -18px;
+  z-index: 10;
+  display: block;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  border-left: 1px solid #B9BFBD;
+  border-right: 1px solid #B9BFBD;
+  padding: 0 10px 0 10px;
+  margin-left: 5px;
+
 }
 
 #nav, #inner-nav {
@@ -72,4 +88,11 @@ body {
 #sign-up-link,
 #sign-in-link {
   border-left: 1px solid #B9BFBD;
+}
+
+footer {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  padding-left: 10px;
 }

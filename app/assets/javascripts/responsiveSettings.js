@@ -83,7 +83,9 @@ $(document).ready(function () {
   $('#cubeGridSubmit').on('click',function (event){
     event.preventDefault();
     stopPrevious();
-    cubeGrid(getTimeDomain, getFrequencies);
+    var text = $('#cubeYourText').val()
+    var textColor = parseInt($('#cubeText3dColor').val().slice(1,7), 16);
+    cubeGrid(getTimeDomain, getFrequencies, text, textColor);
   });
 
   //lines controlls
@@ -125,8 +127,16 @@ $(document).ready(function () {
     currentVisualiser.cubeStrength = parseInt($('#cubeStrength').val())/100;
   });
 
+  $('#cubeYourText').on('change', function(){
+    currentVisualiser.yourText = $('#cubeYourText').val();
+  });
+
   $('#cubeBackgroundColorControl').on('change', function(){
     currentVisualiser.particleBackgroundColorController = parseInt($('#cubeBackgroundColorControl').val().slice(1,7), 16);
+  });
+
+  $('#cubeText3dColor').on('change', function(){
+    currentVisualiser.text3dColor = parseInt($('#cubeText3dColor').val().slice(1,7), 16);
   });
 
   // Sunflare controls

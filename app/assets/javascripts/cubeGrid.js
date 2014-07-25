@@ -1,4 +1,4 @@
-var cubeGrid = function(getTimeDomain, getFrequencies){
+var cubeGrid = function(getTimeDomain, getFrequencies, text, textColor){
   //  emitter factory
   var attribs = {
     currentAnimationId: null,
@@ -15,9 +15,9 @@ var cubeGrid = function(getTimeDomain, getFrequencies){
     particleSpeedBase: 90,
     particleSpeedSpread: 10,
     particleBackgroundColorController: 0x000000,
-    cubeStrength: 0.1
-
-
+    cubeStrength: 0.1,
+    yourText: text,
+    text3dColor: textColor
     //var controls;
   }
   // Helpers
@@ -99,8 +99,8 @@ var cubeGrid = function(getTimeDomain, getFrequencies){
       attribs.scene.add(cube);
     };
 
-    var directionalLight = new THREE.DirectionalLight(0xffffff, 0.7);
-    directionalLight.position.set(0,1,1);
+    var directionalLight = new THREE.DirectionalLight(0xffffff, 3);
+    directionalLight.position.set(0,-5,1);
     attribs.scene.add(directionalLight);
      var directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.7);
     directionalLight2.position.set(-6,1,1);
@@ -111,6 +111,29 @@ var cubeGrid = function(getTimeDomain, getFrequencies){
     attribs.camera.position.y = -50;
 
     attribs.renderer.setClearColor( attribs.particleBackgroundColorController, 0 ); // the default
+
+    var material = new THREE.MeshPhongMaterial({
+    color: attribs.text3dColor
+    });
+    textGeom = new THREE.TextGeometry( attribs.yourText, {
+        font: 'helvetiker', // Must be lowercase!
+        weight: 'bold',
+        size: 20,
+        height: 7,
+        curveSegments: 5
+    });
+    textMesh = new THREE.Mesh( textGeom, material );
+
+    attribs.scene.add( textMesh );
+
+    // Do some optional calculations. This is only if you need to get the
+    // width of the generated text
+    textGeom.computeBoundingBox();
+    textMesh.rotation.x = -62;
+    textMesh.position.x = 0;
+    textMesh.position.y = 10;
+    textMesh.position.z = 0;
+    textGeom.textWidth = textGeom.boundingBox.max.x - textGeom.boundingBox.min.x;
   }
 
   var render = function(){

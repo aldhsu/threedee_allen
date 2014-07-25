@@ -9,24 +9,67 @@
     background-color: black;
 }
 
+#drop-zone h2,
+#drop-zone h4,
+#soundcloud-url h2 {
+  text-align: center;
+  top: 50%;
+  color: #B9BFBD;
+}
+
+#sc-url-content {
+  font-size: 1em;
+  text-align: center;
+  position: absolute;
+  margin: 0 100px 0 100px;
+  left: 0%;
+  top: 20%;
+  color: #B9BFBD;
+}
+
+#sc-url-content a {
+  color: #B9BFBD;
+}
+
+#sc-url-content a:hover {
+  color: #B5FFFB;
+}
+
+#sc-url-content p {
+  padding: 20px 0 20px 0;
+}
+
+#sc-url-content input {
+  border-radius: 5px;
+  border: 0px;
+  height: 25px;
+}
+
+/*#disclaimer {
+  position: absolute;
+  bottom: 0;
+}*/
+
+#soundcloud-url input {
+  height: 25px;
+  font-size: 1em;
+}
+
 #drop-zone, #soundcloud-url {
-  border: 3px dashed #CFCFCF;
+  border: 3px solid #B5FFFB;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
   width: 50%;
-  /*margin-left: 15%;*/
-  /*margin-right: 15%;*/
-  /*min-height: 300px; */
   height: 80%;
-  /*margin: 20px auto;*/
   display: none;
   position: fixed ;
   left: 25%;
   top: 10%;
-  /*right: 10%;*/
   z-index: 10;
 }
 
 #drop-zone.hover {
- border: 10px dashed #0c0;
+  box-shadow: 0px 0px 20px #B5FFFB;
 }
 
 #drop-zone img {
@@ -63,10 +106,6 @@
   width: 48%;
 }
 
-#soundcloud-url {
-
-}
-
 #soundcloud-url input {
   width: 370px;
 }
@@ -84,11 +123,21 @@ select, input[type="color"][list] {
   font-size: 1em;
 }
 
-#sunflareSubmit {
+#sunflareSubmit, #sunflare-save, #linesSubmit, #lines-save, #cubeGridSubmit, #cubegrid-save, #visualisers_list {
+  /*position: absolute;*/
+  margin: 20px 0 0 40px;
   background-color: white;
   font-size: 1em;
   border: 0px;
   border-radius: 5px;
+}
+
+#sunflareSubmit, #sunflare-save, #linesSubmit, #lines-save, #cubeGridSubmit, #cubegrid-save {
+  margin-bottom: 10px;
+}
+
+#sunflareSubmit:active, #sunflare-save:active, #linesSubmit:active, #lines-save:active {
+  box-shadow: inset 0 0 5px black;
 }
 
 #controllsList{
@@ -102,6 +151,10 @@ select, input[type="color"][list] {
 
 #controllsList ul{
   list-style: none;
+}
+
+#cube-strength, #cube-backcolor, #line-thick, #line-backcolor {
+  margin-left: 28px;
 }
 
 input[type='range']{

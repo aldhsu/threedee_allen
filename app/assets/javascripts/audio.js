@@ -83,7 +83,11 @@ $(document).ready(function () {
   function previewfile(file) {
       var reader = new FileReader();
       reader.onload = function (event) {
-        dropZone.innerHTML += '<p id="upl_success">Succesfully uploaded' + " " + file.name;
+        $('footer').empty();
+        var p = $('<p>');
+        p.attr('id', 'upl_success');
+        p.text(file.name);
+        $('footer').append(p);
       };
 
       // Pauses current audio object, assigns a new source link, and plays.
@@ -91,6 +95,9 @@ $(document).ready(function () {
         Sound.audio0.pause();
         Sound.audio0.src = reader.result;
         Sound.audio0.play();
+
+        // Closing the dropzone dom element upon filedrop completion
+        $('#drop-zone').toggle('fold');
       };
       reader.readAsDataURL(file);
   }
