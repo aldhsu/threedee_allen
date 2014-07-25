@@ -26,7 +26,8 @@ class SessionsController < ApplicationController
         data[:settings][key] = setting.settings[key]
       end
     end
-    render text: JSON.generate(data)
+    binding.pry
+    render text: JSON.generate(data), mime_type: Mime::Type["text/JSON"]
 
   end
 
