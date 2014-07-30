@@ -10,7 +10,7 @@ $(document).ready(function() {
     $(".sign-in-form").slideToggle('slow');
   });
 
-  $("#sign-in-fuck").on('ajax:success', function (xhr, data) {
+  $("#sign-in-ajax").on('ajax:success', function (xhr, data) {
     console.log(data);
     $(".sign-in-form").slideToggle('slow');
     $("#sign-in-link").hide();
