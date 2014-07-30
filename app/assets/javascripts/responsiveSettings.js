@@ -33,11 +33,9 @@ $(document).ready(function () {
       }
     })
   }
-
-  function stopPrevious () {
+  // made this a dirty global
+  stopPrevious = function () {
     try{
-      console.log(currentVisualiser);
-      console.log(currentVisualiser.currentAnimationId);
       cancelAnimationFrame(currentVisualiser.currentAnimationId);
       console.log($('#visualiser-canvas').empty());
     } catch(err) {
@@ -169,6 +167,8 @@ $(document).ready(function () {
     }
   });
 
+  stopPrevious();
+  lines(getTimeDomain, getFrequencies);
 });
 
 
