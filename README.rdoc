@@ -4,5 +4,4 @@ Project 2
 Team DNM
 3d Visualiser
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+<a href='teamdnmmaster51da.ninefold-apps.com'> Link to Ninefold Host </a>
