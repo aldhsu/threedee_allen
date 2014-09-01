@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  // Helpers
   var getTimeDomain = function() {
     return Sound.getTimeDomain();
   };
@@ -6,7 +7,7 @@ $(document).ready(function () {
   var getFrequencies = function() {
     return Sound.getFrequencyDomain();
   };
-
+  // Settings helpers
   var getValues = function(id) {
     var settingHash = {};
     settingHash["visualiser"] = id;
@@ -21,7 +22,6 @@ $(document).ready(function () {
 
     return {settings: settingHash};
   }
-
   var sendValues = function(data) {
     $.ajax({
       url: '/settings',
@@ -159,16 +159,16 @@ $(document).ready(function () {
         sendValues(getValues('#sunflareControls'));
         break;
       case "lines-save":
-        getValues('#linesSpeedControls')
+        sendValues(getValues('#linesSpeedControls'));
         break;
       case "cubegrid-save":
-        getValues('#cubeGridControls')
+        sendValues(getValues('#cubeGridControls'));
         break;
     }
   });
 
-  stopPrevious();
-  lines(getTimeDomain, getFrequencies);
+  // stopPrevious();
+  // lines(getTimeDomain, getFrequencies);
 });
 
 
