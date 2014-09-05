@@ -10,5 +10,5 @@
 
 class Setting < ActiveRecord::Base
   belongs_to :user
-  serialize :settings, :hash
+  serialize :settings, Hash
 end

@@ -7,28 +7,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # raise params.inspect
+    # binding.pry
     user = User.find_by(:username => params[:username])
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
+      render json: user, :include => {:settings => {:only => [:visualiser_id, :settings]}}
     else
-      redirect_to login_path
+      render json: "Error"
     end
-    data = {
-      user: user.username,
-      settings: {}
-    }
-    # binding.pry
-    user.settings.each do |setting|
-      # dirty eval
-      # binding.pry
-      eval(setting.settings).keys.each do |key|
-        data[:settings][key] = setting.settings[key]
-      end
-    end
-    # binding.pry
-    render text: JSON.generate(data), mime_type: Mime::Type["text/JSON"]
-
   end
 
   def destroy
