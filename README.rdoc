@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project 2
+Team DNM
+3d Visualiser
 
-Things you may want to cover:
+Built Using: 
+  three.js - WebGL wrapper
+  Web audio API
+  
+Functions:
+  -Drag and drop mp3 playing
+  -Soundcloud urls playing
+  -Three Visualisers with live adjustable settings
+    -GLSL based Sunflare
+    -Line visualiser with colors change dependent on frequency analysis
+    -Cube grid with particle effects
+    
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+{Link on Ninefold}[http://teamdnmmaster51da.ninefold-apps.com]

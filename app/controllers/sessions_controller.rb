@@ -11,16 +11,29 @@ class SessionsController < ApplicationController
     user = User.find_by(:username => params[:username])
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      render json: user
     else
       redirect_to login_path
     end
+    data = {
+      user: user.username,
+      settings: {}
+    }
+    # binding.pry
+    user.settings.each do |setting|
+      # dirty eval
+      # binding.pry
+      eval(setting.settings).keys.each do |key|
+        data[:settings][key] = setting.settings[key]
+      end
+    end
+    # binding.pry
+    render text: JSON.generate(data), mime_type: Mime::Type["text/JSON"]
 
   end
 
   def destroy
     session[:user_id] = nil
-    render json: @current_user
+    render nothing: true
   end
 
   private

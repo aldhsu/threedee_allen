@@ -3,11 +3,12 @@
 # Table name: settings
 #
 #  id            :integer          not null, primary key
-#  visualiser_id :integer
-#  settings      :string(255)
+#  visualiser_id :string(255)
+#  settings      :text
 #  user_id       :string(255)
 #
 
-class Settings < ActiveRecord::Base
+class Setting < ActiveRecord::Base
   belongs_to :user
+  serialize :settings, :hash
 end
