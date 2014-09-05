@@ -45,6 +45,13 @@ var Sound = {
 
 $(document).ready(function () {
 
+
+
+
+  $('#popUpDiv #popup').on('click', function(){
+    $('#popUpDiv').fadeOut(2000);
+  })
+
   // Initial Audio setup
   Sound.audioContextSetup();
   Sound.createAudioObject();

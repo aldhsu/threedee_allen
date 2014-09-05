@@ -9,6 +9,35 @@
     background-color: black;
 }
 
+/*////////////// splash box //////*/
+
+#popUpDiv{
+  width: 600px;
+  height: 300px;
+  background-color: #fff;
+  position: relative;
+  margin: auto;
+  margin-top: 90px;
+  color: #000;
+}
+
+#popUpDiv h1{
+  padding: 5% 5% 0% 5%;
+  margin: 0;
+}
+
+#popUpDiv p{
+  padding: 5%;
+  margin: 0;
+}
+
+#popUpDiv a{
+  color: #000;
+  margin-left: 230px;
+}
+
+/*/////////////// drop zone ///////*/
+
 #drop-zone h2,
 #drop-zone h4,
 #soundcloud-url h2 {
