@@ -167,8 +167,8 @@ $(document).ready(function () {
     }
   });
 
-  stopPrevious();
-  lines(getTimeDomain, getFrequencies);
+  // stopPrevious();
+  // lines(getTimeDomain, getFrequencies);
 });
 
 
