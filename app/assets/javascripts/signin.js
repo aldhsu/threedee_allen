@@ -9,20 +9,16 @@ $(document).ready(function() {
     }
   };
 
-  $( "#sign-in-link" ).on('click', function(){
-    $(".sign-in-form").slideToggle('slow');
-  });
-
   $("#sign-in-ajax").on('ajax:success', function (xhr, data) {
     $(".sign-in-form").slideToggle('slow');
     $("#sign-in-link").hide();
     $("#sign-up-link").hide();
     user_id = data.id;
+    // signout show
     var $div = $('<div>').addClass("log-out-link")
-    var a = $('<a>').text("Log out" + data.username );
+    var a = $('<a>').text("Log out " + data.username );
     $div.append(a);
     a.attr('id','logout');
-    console.log($div);
     $('#inner-nav').append($div);
     // setup settings
     var settings = data.settings;
@@ -34,8 +30,9 @@ $(document).ready(function() {
   })
 
   $("#inner-nav").on('click',"#logout", function() {
+    console.log('doing');
     $.ajax({
-      url: '/sessions/' + user_id,
+      url: '/sessions/',
       type: 'DELETE',
       success: function() {
         $('#logout').remove();

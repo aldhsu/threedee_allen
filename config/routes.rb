@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  delete '/sessions' => "sessions#destroy"
   resources :users
   resources :sessions, only: [:create, :destroy]
   resources :pages
