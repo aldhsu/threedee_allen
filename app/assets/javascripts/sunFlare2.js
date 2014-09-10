@@ -4,8 +4,8 @@ function sunFlare2(getTimeDomain, getFrequencies) {
   // var mouseX = 0, mouseY = 0;
   var sunFlare = {
     sphereSize: 1,
-    spinningSpeedX: 0,
-    spinningSpeedY: 0,
+    spinningSpeedX: 0.00,
+    spinningSpeedY: 0.01,
     vertexShader : "varying vec2 vUv;attribute float displacement; varying vec3 vNormal;varying float vertD;void main() {vertD = displacement;vUv = uv;vNormal = normal;vec3 newPosition =position + normal *vec3(displacement);gl_Position = projectionMatrix *modelViewMatrix *vec4(newPosition, 1.0);}",
 
     fragmentShader:
@@ -59,8 +59,8 @@ function sunFlare2(getTimeDomain, getFrequencies) {
     sunFlare.camera = new THREE.PerspectiveCamera(
         sunFlare.fov,
         window.innerWidth / window.innerHeight,
-        1,
-        10000 );
+        10,
+        10000000 );
     sunFlare.camera.position.z = 1000;
     sunFlare.camera.target = new THREE.Vector3( 0, 0, 0 );
     scene.add( sunFlare.camera );
@@ -104,9 +104,9 @@ function sunFlare2(getTimeDomain, getFrequencies) {
       blending: THREE.AdditiveBlending,
       transparent: true    });
     cloudSystem = new THREE.PointCloud(cloudGeom, cloudMat);
+    cloudSystem2 = new THREE.PointCloud(cloudGeom, cloudMat);
     scene.add(cloudSystem);
-    console.log(cloudSystem);
-
+    scene.add(cloudSystem2);
     // create the renderer and attach it to the DOM
     renderer = new THREE.WebGLRenderer();
     // renderer.shadowMapEnabled = true;

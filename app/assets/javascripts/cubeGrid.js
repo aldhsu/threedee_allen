@@ -106,9 +106,9 @@ var cubeGrid = function(getTimeDomain, getFrequencies, text, textColor){
     directionalLight2.position.set(-6,1,1);
     attribs.scene.add(directionalLight2);
 
-    attribs.camera.position.z = 50;
+    attribs.camera.position.z = 100;
     attribs.camera.position.x = 0;
-    attribs.camera.position.y = -50;
+    attribs.camera.position.y = 0;
 
     attribs.renderer.setClearColor( attribs.particleBackgroundColorController, 0 ); // the default
 

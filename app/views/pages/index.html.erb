@@ -1,10 +1,13 @@
 <div class="index-container">
-  <div id="popUpDiv">
-    <h1>Welcome to THREEDEE!</h1>
-    <p>This site does blah blah blah ksjdhf sdjh sdkjhsdjgh fdj sjhg fljg sdkjhg ds kjhsdgf kj ljghds fhjg lhdgs lhg ljghasdggjklg lgkh dslgdsls iussdlk</p>
-    <a href="#" id="popup" >Click to Close</a>
-  </div>
-
+  <% unless @current_user %>
+    <div id="popUpDiv">
+      <h1>Welcome to THREEDEE!</h1>
+      <p>Drag and drop MP3s from your computer or enter a SoundCloud URL</p>
+      <p>Customise your from 3 visualisers and see them update live!</p>
+      <p>Sign up to save your settings.</p>
+      <a href="#" id="popup" >Click to Close</a>
+    </div>
+  <% end %>
   <div id="drop-zone">
     <h2>Drag n' Drop!</h2>
     <h4>Supported file types: mp3, wav, aiff, or ogg</h4>

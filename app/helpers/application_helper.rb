@@ -1,9 +1,6 @@
 module ApplicationHelper
   def smartnav
     links = "<div id='nav'><div id='inner-nav'>"
-    if @current_user.try(:is_admin)
-      links += "<div class='view-users-link'>" + link_to('View users', users_path) + "</div>"
-    end
 
     if @current_user.present?
       links += "<div class='log-out-link'>"
