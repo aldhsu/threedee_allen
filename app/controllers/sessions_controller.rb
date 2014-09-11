@@ -1,9 +1,16 @@
 class SessionsController < ApplicationController
-
   before_action :check_if_logged_in, :except => [:new, :create]
   before_action :check_if_admin, :only => [:index]
 
   def new
+  end
+
+  def show
+    if @current_user
+      render json: @current_user, :include => {:settings => {:only => [:visualiser_id, :settings]}}, except: :password_digest
+    else
+      render nothing: true
+    end
   end
 
   def create
@@ -24,7 +31,7 @@ class SessionsController < ApplicationController
 
   private
 
-  #chech if the user is logged in
+  #check if the user is logged in
   #loads the smart navs
   def check_if_logged_in
     redirect_to(new_user_path) if @current_user.nil?

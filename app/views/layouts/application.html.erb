@@ -17,19 +17,21 @@
       </div>
 
       <h3 id="title"><a href="/">Threedee</a></h3>
+      <div id='nav'>
+        <div id='inner-nav'>
+          <div class='log-out-link' id='logout'>
+          <div id='sign-up-link'><a href='/signup'>Sign Up</a></div>
+        </div>
+      </div>
+        <div class="sign-in-form">
+          <%= form_tag(sessions_path, :id => "sign-in-ajax", :method => :post, remote: true) do %>
+            <%= text_field_tag :username, nil, :placeholder => "Username" %>
 
-      <%== smartnav %>
-      <% unless @current_user %>
-          <div class="sign-in-form">
-            <%= form_tag(sessions_path, :id => "sign-in-ajax", :method => :post, remote: true) do %>
-              <%= text_field_tag :username, nil, :placeholder => "Username" %>
+            <%= password_field_tag :password, nil, :placeholder => "Password" %>
 
-              <%= password_field_tag :password, nil, :placeholder => "Password" %>
-
-              <%= submit_tag "Sign In" %>
-            <% end %>
-          </div>
-      <% end %>
+            <%= submit_tag "Sign In" %>
+          <% end %>
+        </div>
     </header>
     <%= yield %>
     <footer>

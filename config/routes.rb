@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   root :to => 'pages#index'
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
+  get '/session' => 'sessions#show'
 end
